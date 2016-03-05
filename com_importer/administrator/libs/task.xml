@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definition>
+	<input>
+		<fields>
+			<field id="wedstrijdnummer">
+				<is_empty_allowed>false</is_empty_allowed>
+				<name>Wedstrijdnummer</name>
+				<format/>
+			</field>
+			<field id="thuisteamcode">
+				<is_empty_allowed>false</is_empty_allowed>
+				<name>Thuis teamcode</name>
+				<format/>
+			</field>
+			<field id="thuisteam">
+				<is_empty_allowed>false</is_empty_allowed>
+				<name>Thuis team</name>
+				<format/>
+			</field>
+			<field id="uitteam">
+				<is_empty_allowed>false</is_empty_allowed>
+				<name>Uit team</name>
+				<format/>
+			</field>
+			<field id="wedstrijddatum">
+				<is_empty_allowed>false</is_empty_allowed>
+				<name>Wedstrijddatum</name>
+				<format>yyyy-mm-dd</format>
+			</field>
+			<field id="thuisscore">
+				<is_empty_allowed>true</is_empty_allowed>
+				<name>Thuisscore</name>
+				<format/>
+			</field>
+		</fields>
+	</input>
+	<output>
+		<tables>
+			<table name="dummy">
+				<catch_all>params</catch_all>
+				<order></order>
+				<cond_insert></cond_insert>
+				<use_timestamp>true</use_timestamp>
+				<use_updated>true</use_updated>
+				<delete_non_updated>true</delete_non_updated>
+				<cleanup_after>true</cleanup_after>
+				<fields>
+					<field>
+						<db_name>teamid</db_name>
+						<cvs_name/>
+						<type>string</type>
+						<foreignkey>
+ 							<foreigntable>team</foreigntable>
+ 							<foreignid>id</foreignid>
+ 							<foreignmatch>teamcode</foreignmatch>
+ 							<tablematch>Thuis teamcode</tablematch>						
+ 							<matchtype>string</matchtype>						
+ 							<matchformat></matchformat>						
+						</foreignkey>
+						<is_primkey>true</is_primkey>
+						<is_required>true</is_required>
+						<default/>
+					</field>
+					<field>
+						<db_name>nr</db_name>
+						<cvs_name>wedstrijdnummer</cvs_name>
+						<type>string</type>
+						<is_selectkey>true</is_selectkey>
+						<is_primkey>true</is_primkey>
+						<is_required>true</is_required>
+						<default/>
+					</field>
+					<field>
+						<db_name>thuis</db_name>
+						<cvs_name>thuisteam</cvs_name>
+						<type>string</type>
+						<is_primkey>false</is_primkey>
+						<is_required>true</is_required>
+						<default/>
+					</field>
+					<field>
+						<db_name>teamcode</db_name>
+						<cvs_name>thuisteamcode</cvs_name>
+						<type>string</type>
+						<is_primkey>false</is_primkey>
+						<is_required>true</is_required>
+						<default/>
+					</field>
+					<field>
+						<db_name>uit</db_name>
+						<cvs_name>uitteam</cvs_name>
+						<type>string</type>
+						<is_required>true</is_required>
+						<default/>
+					</field>
+					<field>
+						<db_name>datum</db_name>
+						<cvs_name>wedstrijddatum</cvs_name>
+						<type>date</type>
+						<is_required>false</is_required>
+						<default/>
+					</field>
+					<field>
+						<db_name>thuisscore</db_name>
+						<cvs_name>thuisscore</cvs_name>
+						<type>int</type>
+						<is_required>false</is_required>
+						<default/>
+					</field>
+					<field>
+						<db_name>params</db_name>
+						<cvs_name/>
+						<type>string</type>
+						<catchall>false</catchall>
+						<default> </default>
+					</field>
+				</fields>
+			</table>
+		</tables>
+	</output>
+</definition>

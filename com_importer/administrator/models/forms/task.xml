@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<form>
+	<fieldset>
+		<field name="id" type="text" default="0" label="COM_IMPORTER_FORM_LBL_TASK_ID"
+            readonly="true" class="readonly" description="JGLOBAL_FIELD_ID_DESC" /> 
+       <field name="name" type="text" label="COM_IMPORTER_FORM_LBL_TASK_NAME"
+            description="COM_IMPORTER_FORM_DESC_TASK_NAME" required="true" filter="safehtml" /> 
+       <field name="description" type="textarea"
+            label="COM_IMPORTER_FORM_LBL_TASK_DESCRIPTION" description="COM_IMPORTER_FORM_DESC_TASK_DESCRIPTION" 
+            filter="safehtml" option_on="Yes" option_off="Yes" /> 
+       <field name="definition" type="textarea" label="COM_IMPORTER_FORM_LBL_TASK_DEFINITION" 
+       		description="COM_IMPORTER_FORM_DESC_TASK_DEFINITION" filter="raw" option_on="Yes" option_off="Yes" /> 
+       <field name="last_run" type="calendar" class="inputbox" default="0000-00-00 00:00:00" 
+            label="COM_IMPORTER_FORM_LBL_TASK_LAST_RUN" description="COM_IMPORTER_FORM_DESC_TASK_LAST_RUN" 
+            format="%Y-%m-%d %H:%M:%S" filter="safehtml" />
+       <field name="csv_file" type="file" 
+       		label="COM_IMPORTER_FORM_LBL_TASK_CSVFILE" 
+       		description="COM_IMPORTER_FORM_DESC_TASK_CSVFILE" />
+       <field name="db_tables" type="sql" query="select TABLE_NAME from information_schema.tables WHERE TABLE_TYPE='BASE TABLE'"
+       		key_field="TABLE_NAME" value_field="TABLE_NAME"
+       		label="COM_IMPORTER_FORM_LBL_TASK_TABLES" multiple="true"
+       		description="COM_IMPORTER_FORM_DESC_TASK_TABLES" />
+	</fieldset>
+</form>

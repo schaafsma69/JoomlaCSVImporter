@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="component" version="3.0" method="upgrade">
+    <name>com_importer</name>
+    <creationDate>2015-04-20</creationDate>
+    <copyright>Copyright (C) 2015. Alle rechten voorbehouden.</copyright>
+    <license>GNU General Public License versie 2 of hoger; Zie LICENSE.txt</license>
+    <author>Pieter</author>
+    <authorEmail>schaafsma69@gmail.com</authorEmail>
+    <authorUrl>http://joomla.s-core.nl</authorUrl>
+    <version>1.0.0</version>
+    <description></description>
+    
+    
+    
+    <install> <!-- Runs on install -->
+        <sql>
+            <file driver="mysql" charset="utf8">sql/install.mysql.utf8.sql</file>
+        </sql>
+    </install>
+    <uninstall> <!-- Runs on uninstall -->
+        <sql>
+            <file driver="mysql" charset="utf8">sql/uninstall.mysql.utf8.sql</file>
+        </sql>
+    </uninstall>
+
+    <files folder="site">
+        <filename>index.html</filename>
+        <filename>importer.php</filename>
+        <filename>controller.php</filename>
+        <filename>router.php</filename>
+        <folder>views</folder>
+        <folder>models</folder>
+        <folder>controllers</folder>
+        <folder>helpers</folder>
+        <folder>assets</folder>
+    </files>
+    <languages folder="languages/site">
+        
+			<language tag="nl-NL">nl-NL/nl-NL.com_importer.ini</language>
+			<language tag="en-GB">en-GB/en-GB.com_importer.ini</language>
+    </languages>
+    <administration>
+        <menu img="components/com_importer/assets/images/s_com_importer.png" >COM_IMPORTER</menu>
+        <submenu>
+            
+			<menu link="option=com_importer&amp;view=tasks" view="tasks" img="components/com_importer/assets/images/s_tasks.png" alt="Importer/Tasks">COM_IMPORTER_TITLE_TASKS</menu>
+
+        </submenu>
+        <files folder="administrator">
+            <filename>access.xml</filename>
+            <filename>config.xml</filename>
+            <filename>controller.php</filename>
+            <filename>index.html</filename>
+            <filename>importer.php</filename>
+            <folder>controllers</folder>
+            <folder>assets</folder>
+            <folder>helpers</folder>
+            <folder>libs</folder>
+            <folder>models</folder>
+            <folder>sql</folder>
+            <folder>tables</folder>
+            <folder>views</folder>
+        </files>
+        <languages folder="languages/administrator">
+            
+			<language tag="nl-NL">nl-NL/nl-NL.com_importer.ini</language>
+			<language tag="nl-NL">nl-NL/nl-NL.com_importer.sys.ini</language>
+			<language tag="en-GB">en-GB/en-GB.com_importer.ini</language>
+			<language tag="en-GB">en-GB/en-GB.com_importer.sys.ini</language>
+        </languages>
+    </administration>
+    <plugins>
+        <plugin group="search" plugin="importer"/>
+    </plugins>
+    
+</extension>
+<!-- Component built by the Joomla Component Creator -->
+<!-- http://www.component-creator.com/ -->

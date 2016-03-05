@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<form>
+	<fieldset>
+       <field name="importfile" type="file"
+            label="COM_TEAMMANAGER_FORM_LBL_IMPORT_FILENAME"
+            description="COM_TEAMMANAGER_FORM_DESC_IMPORT_FILENAME" 
+			required="true" filter="raw" />
+	</fieldset>
+</form>
