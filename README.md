@@ -3,6 +3,8 @@
 ## Purpose
 Joomla CSV Importer is a Joomla Component that helps you import CSV data. 
 
+This project is a work in progress and not ready for use.
+
 ## Approach
 The approach is as follows:
 - In the administrator you create tasks and each task has an import definition file. 
