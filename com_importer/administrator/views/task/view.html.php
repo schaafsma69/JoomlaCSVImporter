@@ -28,8 +28,8 @@ class ImporterViewTask extends JViewLegacy {
         $this->state = $this->get('State');
         $this->item = $this->get('Item');
         $this->form = $this->get('Form');
-
-        // Check for layout
+        
+		// Check for layout        
         if ($this->item->id == 0) {
         	$this->setLayout('create');
         }
@@ -38,7 +38,7 @@ class ImporterViewTask extends JViewLegacy {
         if (count($errors = $this->get('Errors'))) {
             throw new Exception(implode("\n", $errors));
         }
-
+        
         $this->addToolbar();
         parent::display($tpl);
     }
@@ -76,7 +76,6 @@ class ImporterViewTask extends JViewLegacy {
         if (empty($this->item->id)) {
             JToolBarHelper::cancel('task.cancel', 'JTOOLBAR_CANCEL');
         } else {
-        	JToolBarHelper::custom('import.starttask', 'upload.png', 'upload.png', 'Import', false, false );
             JToolBarHelper::cancel('task.cancel', 'JTOOLBAR_CLOSE');
         }
     }
