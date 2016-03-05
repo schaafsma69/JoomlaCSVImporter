@@ -1,6 +1,5 @@
 CREATE TABLE IF NOT EXISTS `#__importer_tasks` (
 `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT,
-
 `name` VARCHAR(255)  NOT NULL ,
 `description` TEXT NOT NULL ,
 `definition` TEXT NOT NULL ,

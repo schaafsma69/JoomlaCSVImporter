@@ -26,12 +26,11 @@ class ImporterModelTasks extends JModelList {
     public function __construct($config = array()) {
         if (empty($config['filter_fields'])) {
             $config['filter_fields'] = array(
-                                'id', 'a.id',
+				'id', 'a.id',
                 'name', 'a.name',
                 'description', 'a.description',
                 'definition', 'a.definition',
                 'last_run', 'a.last_run',
-
             );
         }
 
@@ -101,10 +100,6 @@ class ImporterModelTasks extends JModelList {
                 )
         );
         $query->from('`#__importer_tasks` AS a');
-
-        
-
-        
 
         // Filter by search in title
         $search = $this->getState('filter.search');

@@ -22,15 +22,10 @@ class ImporterControllerTask extends JControllerForm
         $this->view_list = 'tasks';
         parent::__construct();
     }
-
+    
     function save() {
     	$data  = $this->input->post->get('jform', array(), 'array');
-    	$file		= $data['cvs_file'];
-    	$dbtables	= $data['db_tables'];
-    	 
-    	$data['definition'] = 'xml string';
     	$this->input->post->set('jform', $data);
     	parent::save();
     }
-    
 }
