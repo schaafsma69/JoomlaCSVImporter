@@ -69,8 +69,7 @@
 	width:150px;
 }
 
-#csv-replace,
-#csv-update {
+.inputfile {
 	height:0px;
 	width:0px;
 	overflow:hidden;
